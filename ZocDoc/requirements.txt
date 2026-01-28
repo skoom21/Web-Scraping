@@ -1,0 +1,21 @@
+# ZocDoc Scraper - Production Requirements
+
+# Browser automation
+camoufox>=0.4.0
+playwright>=1.40.0
+
+# HTML parsing
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# HTTP server (for Cloud Run)
+flask>=3.0.0
+gunicorn>=21.2.0
+requests>=2.31.0

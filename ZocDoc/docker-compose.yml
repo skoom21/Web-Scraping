@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  zocdoc-scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zocdoc-scraper
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    restart: unless-stopped
+    environment:
+      - ZOCDOC_HEADLESS=true
+      - ZOCDOC_LOG_LEVEL=INFO
+    # Uncomment to run as a cron job (requires cron service)
+    # command: /bin/sh -c "while true; do python zocdoc_scraper_production.py; sleep 3600; done"
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '1.0'
+          memory: 1G
+    
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

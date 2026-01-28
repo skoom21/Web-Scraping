@@ -1,0 +1,44 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and Output
+logs/
+output/
+*.log
+
+# Data files
+*.csv
+
+# Environment and Secrets
+.env
+*.pem
+*.key
+
+# Docker artifacts
+*.tar.gz
+zocdoc-image.tar*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
